@@ -1,0 +1,36 @@
+<?php
+/**
+ * @file
+ * This module provides a simple coundown time
+ *
+ * Author: Andrii Mutylo
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function creation_countdown_theme() {
+  return [
+    'countdown' => [
+      'render element' => 'element',
+      'template' => 'countdown',
+      'path' => drupal_get_path('module', 'creation_countdown') . '/templates',
+    ],
+  ];
+}
+
+/**
+ * Theme function for a CAPTCHA element.
+ *
+ * Render it in a section element if a description of the CAPTCHA
+ * is available. Render it as is otherwise.
+ */
+function template_preprocess_countdown(&$variables) {
+  $element = $variables['element'];
+  $variables['countdown'] = [
+    '#type' => 'markup',
+    '#value' => $element['#text']
+  ];
+  $variables['#attached']['library'][] = 'countdown/countdown.timer';
+}
+
