@@ -2,10 +2,10 @@ countdown.timer:
   version: VERSION
   css:
     component:
-      css/countdown_timer.css: {}
+      css/creation_countdown_timer.css: {}
   js:
-    js/jquery.countdown.min.js: {}
-    js/countdown_timer_init.js: {}
+    js/jquery_countdown_timer.js: {}
+    js/creation_countdown_timer_init.js: {}
   dependencies:
     - core/jquery
     - core/drupal

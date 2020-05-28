@@ -39,31 +39,31 @@ class CountDownDefaultFormatter extends DateTimeDefaultFormatter{
     //TODO:: Add display Days, hours, minutes, seconds
     $form = parent::settingsForm($form, $form_state);
     unset($form["format_type"]);
-    $form['weeks'] = [
-      '#type' => 'checkbox',
-      '#default_value' => $this->getSetting('weeks'),
-      '#title' => $this->t('weeks')
-    ];
-    $form['days'] = [
-      '#type' => 'checkbox',
-      '#default_value' => $this->getSetting('days'),
-      '#title' => $this->t('days')
-    ];
-    $form['hours'] = [
-      '#type' => 'checkbox',
-      '#default_value' => $this->getSetting('hours'),
-      '#title' => $this->t('hours')
-    ];
-    $form['minutes'] = [
-      '#type' => 'checkbox',
-      '#default_value' => $this->getSetting('minutes'),
-      '#title' => $this->t("minutes")
-    ];
-    $form['seconds'] = [
-      '#type' => 'checkbox',
-      '#default_value' => $this->getSetting('seconds'),
-      '#title' => $this->t('seconds')
-    ];
+//    $form['weeks'] = [
+//      '#type' => 'checkbox',
+//      '#default_value' => $this->getSetting('weeks'),
+//      '#title' => $this->t('weeks')
+//    ];
+//    $form['days'] = [
+//      '#type' => 'checkbox',
+//      '#default_value' => $this->getSetting('days'),
+//      '#title' => $this->t('days')
+//    ];
+//    $form['hours'] = [
+//      '#type' => 'checkbox',
+//      '#default_value' => $this->getSetting('hours'),
+//      '#title' => $this->t('hours')
+//    ];
+//    $form['minutes'] = [
+//      '#type' => 'checkbox',
+//      '#default_value' => $this->getSetting('minutes'),
+//      '#title' => $this->t("minutes")
+//    ];
+//    $form['seconds'] = [
+//      '#type' => 'checkbox',
+//      '#default_value' => $this->getSetting('seconds'),
+//      '#title' => $this->t('seconds')
+//    ];
     return $form;
   }
   /**
@@ -72,17 +72,17 @@ class CountDownDefaultFormatter extends DateTimeDefaultFormatter{
   public function settingsSummary() {
     $date = new DrupalDateTime();
     $summary[] = t('Format: @display', ['@display' => $this->formatDate($date)]);
-    $summary[] = t('Show : ');
-    $showWeeks = $this->getSetting('weeks') ? 'yes' : 'no';
-    $summary[] = t('- weeks : ') . $showWeeks;
-    $showDays = $this->getSetting('days') ? 'yes' : 'no';
-    $summary[] = t('- days : ') . $showDays;
-    $showHours = $this->getSetting('hours') ? 'yes' : 'no';
-    $summary[] = t('- hours : ') . $showHours;
-    $showMinutes = $this->getSetting('minutes') ? 'yes' : 'no';
-    $summary[] = t('- minutes : ') . $showMinutes;
-    $showSeconds = $this->getSetting('seconds') ? 'yes' : 'no';
-    $summary[] = t('- seconds : ') . $showSeconds;
+//    $summary[] = t('Show : ');
+//    $showWeeks = $this->getSetting('weeks') ? 'yes' : 'no';
+//    $summary[] = t('- weeks : ') . $showWeeks;
+//    $showDays = $this->getSetting('days') ? 'yes' : 'no';
+//    $summary[] = t('- days : ') . $showDays;
+//    $showHours = $this->getSetting('hours') ? 'yes' : 'no';
+//    $summary[] = t('- hours : ') . $showHours;
+//    $showMinutes = $this->getSetting('minutes') ? 'yes' : 'no';
+//    $summary[] = t('- minutes : ') . $showMinutes;
+//    $showSeconds = $this->getSetting('seconds') ? 'yes' : 'no';
+//    $summary[] = t('- seconds : ') . $showSeconds;
     return $summary;
   }
 
@@ -90,7 +90,7 @@ class CountDownDefaultFormatter extends DateTimeDefaultFormatter{
    * {@inheritdoc}
    */
   protected function formatDate($date) {
-    $format_type = 'short';
+    $format_type = 'long';
     $timezone = $this->getSetting('timezone_override') ?: $date->getTimezone()->getName();
     return $this->dateFormatter->format($date->getTimestamp(), $format_type, '', $timezone != '' ? $timezone : NULL);
   }

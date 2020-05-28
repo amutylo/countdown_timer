@@ -1,7 +1,7 @@
-name: Countdown Timer
+name: Countdown Timer Field
 type: module
 description: This module provides a countdown timer field.
-package: custom
+package: Custom
 version: 1.0
 core: 8.x
 dependencies:
