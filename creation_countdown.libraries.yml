@@ -2,7 +2,7 @@ countdown.timer:
   version: VERSION
   css:
     component:
-      css/creation_countdown_timer.css: {}
+      css/countdown_timer.css: {}
   js:
     js/jquery_countdown_timer.js: {}
     js/creation_countdown_timer_init.js: {}

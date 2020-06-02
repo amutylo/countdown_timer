@@ -35,7 +35,7 @@ function template_preprocess_countdown(&$variables) {
     'unixtimestamp' => strtotime($element['#text']),
     'fontsize' => 28
   );
-  $variables['#attached']['library'][] = 'creation_countdown_timer/countdown.timer';
+  $variables['#attached']['library'][] = 'creation_countdown/countdown.timer';
   $variables['#attached']['drupalSettings']['countdown'] = $settings;
 }
 
